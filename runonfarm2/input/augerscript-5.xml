@@ -1,0 +1,27 @@
+<Request>
+<Email email="cqplatt@jlab.org" request="false" job="false"/>
+<Project name="clas12"/>
+<Track name="debug"/>
+<Name name="createhists"/>
+<OS name="centos7"/>
+<Memory space="10" unit="GB"/>
+<DiskSpace space="1" unit="GB"/>
+<CPU core="10"/>
+
+<Variable name="outDir" value="file:/u/home/cqplatt/runonfarm2/output"/>
+<Variable name="inDir" value="file:/u/home/cqplatt/runonfarm2/input"/>
+
+<Input src="${inDir}/cosmics.gcard"    dest="cosmics.gcard"/>
+
+<Input src="${inDir}/createhists-5.sh" dest="createhists-5.sh"/>
+<Input src="${inDir}/makeHists.groovy" dest="makeHists.groovy"/>
+
+<Output src="simRecHist-5.hipo" dest="${outDir}/simRecHist-5.hipo"/>
+
+<Job>
+<Command><![CDATA[
+	createhists-5.sh
+]]></Command>
+</Job>
+
+</Request>

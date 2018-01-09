@@ -1,0 +1,81 @@
+<gcard>
+
+<!-- target. Variations can be: lH2, lD2, ND3 -->
+<detector name="~/clas12/targets/target"      factory="TEXT" variation="lD2"/>
+
+<!-- central detectors -->
+<detector name="~/clas12/cnd/cnd"             factory="TEXT" variation="original"/>
+<detector name="~/clas12/bst/bst"             factory="TEXT" variation="java"/>
+
+<!-- CTOF CAD volumes-->
+<detector name="~/clas12/ctof/ctof"           factory="TEXT" variation="cad"/>
+<detector name="~/clas12/ctof/javacad/"       factory="CAD"/>
+
+<!-- HTCC -->
+<!--
+<detector name="~/clas12/htcc/htcc"           factory="TEXT" variation="original"/>
+-->
+
+<!-- magnets volumes-->
+<!--
+<detector name="~/clas12/magnets/torus"       factory="TEXT" variation="original"/>
+-->
+<detector name="~/clas12/magnets/solenoid"    factory="TEXT" variation="original"/>
+
+<!-- Beamline configuration: FT is used -->
+<!--
+<detector name="~/clas12/beamline/beamline"   factory="TEXT" variation="FTOn"/>
+<detector name="~/clas12/ft/ft"               factory="TEXT" variation="FTOn"/>
+-->
+
+<!-- Beamline configuration: FT is present but it is not used -->
+<!--
+<detector name="~/clas12/beamline/beamline"   factory="TEXT" variation="FTOff"/>
+<detector name="~/clas12/ft/ft"               factory="TEXT" variation="FTOff"/>
+-->
+
+<!-- forward carriage
+<detector name="~/clas12/fc/forwardCarriage"  factory="TEXT" variation="original"/>
+<detector name="~/clas12/dc/dc"               factory="TEXT" variation="java"/>
+<detector name="~/clas12/ftof/ftof"           factory="TEXT" variation="java"/>
+<detector name="~/clas12/ec/ec"               factory="TEXT" variation="java"/>
+<detector name="~/clas12/pcal/pcal"           factory="TEXT" variation="java"/>
+<option name="SCALE_FIELD" value="clas12-torus-big, -1"/>
+-->
+
+<!-- hall field -->
+<option name="HALL_FIELD"  value="clas12-solenoid"/>
+
+<!-- fields, precise mode -->
+<!-- <option name="FIELD_PROPERTIES" value="clas12-torus-big,  2*mm,
+                                     G4ClassicalRK4,     linear"/>  -->
+     <option name="FIELD_PROPERTIES" value="clas12-solenoid, 0.5*mm,
+                                     G4HelixSimpleRunge, linear"/>
+
+<option name="geometry" value="600x600"/>
+
+<!-- magnetic fields -->
+<!-- <option name="SCALE_FIELD" value="clas12-torus-big,-1"/> -->
+<!-- <option name="SCALE_FIELD" value="clas12-solenoid,1.0"/> -->
+<!-- <option name="HALL_FIELD"  value="clas12-solenoid"/>     -->
+<option name="NO_FIELD" value="all"/>
+
+<option name="COSMICRAYS"   value="55, 2, 66, 1, 4"/>
+<option name="COSMICAREA"   value="0*cm, 0*cm, 0*m, 16*cm"/>
+
+<option name="SIGNALVT"      value="ftof_p1a, ftof_p1b"/>
+<option name="INTEGRATEDRAW" value="ftof_p1a, ftof_p1b"/>
+
+<option name="SAVE_ALL_MOTHERS" value="0"/>
+
+<!-- prints message every `value' events -->
+<option name="PRINT_EVENT"    value="500" />
+
+<option name="PHYSICS" value="STD + FTFP_BERT + Optical"/>
+
+<detector name="region1">
+  <!-- <existence exist="no"/> -->
+  <position x="0.0*mm"  y="0*cm"  z="0*cm"/>
+</detector>
+
+</gcard>

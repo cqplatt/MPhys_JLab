@@ -1,0 +1,27 @@
+<Request>
+<Email email="cqplatt@jlab.org" request="false" job="false"/>
+<Project name="clas12"/>
+<Track name="QUEUE_SUB"/>
+<Name name="createhists"/>
+<OS name="centos7"/>
+<Memory space="10" unit="GB"/>
+<DiskSpace space="1" unit="GB"/>
+<CPU core="10"/>
+
+<Variable name="outDir" value="file:/home/$USER/runonfarm/output"/>
+<Variable name="inDir" value="file:/home/$USER/runonfarm/input"/>
+
+<Input src="${inDir}/CARD_IN.gcard"    dest="CARD_IN.gcard"/>
+
+<Input src="${inDir}/createhists-JOBNO.sh" dest="createhists-JOBNO.sh"/>
+<Input src="${inDir}/makeHists.groovy" dest="makeHists.groovy"/>
+
+<Output src="simRecHist-JOBNO.hipo" dest="${outDir}/simRecHist-JOBNO.hipo"/>
+
+<Job>
+<Command><![CDATA[
+	createhists-JOBNO.sh
+]]></Command>
+</Job>
+
+</Request>
